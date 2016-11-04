@@ -1,4 +1,7 @@
 test:
 	@py.test --tb=short tests -vv
 
-.PHONY: test
+lint:
+	@flake8 libtervis
+
+.PHONY: test lint
