@@ -15,6 +15,7 @@ def test_basic_validation():
         'env': None,
         'ip': None,
         'oid': 13,
+        'ok': True,
         'rel': None,
         'sid': 13,
         'ts': 42.0,

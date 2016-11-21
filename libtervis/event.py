@@ -40,9 +40,13 @@ expect_object = partial(expect_type, ty=dict)
 
 
 def normalize_event(event):
+    ok = expect_type(event, 'ok', ty=bool, allow_none=True)
+    if ok is None:
+        ok = True
     return {
         'ty': expect_string(event, 'ty'),
         'ts': expect_number(event, 'ts', convert=float),
+        'ok': ok,
         'ip': expect_type(event, 'ip', ty=string_types,
                           convert=lambda x: str(ip_address(x)),
                           allow_none=True),
